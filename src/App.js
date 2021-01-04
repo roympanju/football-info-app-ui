@@ -6,13 +6,18 @@ class App extends Component{
         data: []
     }
     componentDidMount() {
-        const url = "https://cors-anywhere.herokuapp.com/http://localhost:8090/football/PL/teams"
+        const url = "http://localhost:8090/football/PL/teams"
         fetch(url)
-        .then((result) => result.json)
+        .then((response) => {
+            return response.json()
+        })
         .then((result) => {
             this.setState({
-            data: result,
+                data: result
             })
+        })
+        .catch((err) => {
+            console.log(err)
         })
     }
     removeCharacter = (index) => {
