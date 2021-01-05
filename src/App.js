@@ -6,7 +6,7 @@ class App extends Component{
         data: []
     }
     componentDidMount() {
-        const url = "http://localhost:8090/football/PL/teams"
+        const url = "http://localhost:8090/football/leaguestanding/PL/standings"
         fetch(url)
         .then((response) => {
             return response.json()
