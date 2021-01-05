@@ -23,10 +23,10 @@ const TableBody = (props) => {
     const rows = props.characterData.map((position, index) => {
         return (
             <tr key={index}>
+                 <td>{position.position}</td>
                 <td>
                     <button onClick={() => props.removeCharacter(index)}>{position.team.name}</button>
                 </td>
-                <td>{position.position}</td>
                 <td>{position.playedGames}</td>
                 <td>{position.won}</td>
                 <td>{position.draw}</td>
