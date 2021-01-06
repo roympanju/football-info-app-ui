@@ -4,8 +4,7 @@ const TableHead = () => {
     return (
         <thead>
             <tr>
-                <th>Team</th>
-                <th>Position</th>
+                <th>Club</th>
                 <th>PlayedGames</th>
                 <th>Won</th>
                 <th>Draw</th>
@@ -23,9 +22,12 @@ const TableBody = (props) => {
     const rows = props.characterData.map((position, index) => {
         return (
             <tr key={index}>
-                 <td>{position.position}</td>
                 <td>
-                    <button onClick={() => props.removeCharacter(index)}>{position.team.name}</button>
+                    <React.Fragment>
+                        {position.position}
+                        <img className="photo" src={position.team.crestUrl}/>
+                        <button onClick={() => props.removeCharacter(index)}>{position.team.name}</button>
+                    </React.Fragment>
                 </td>
                 <td>{position.playedGames}</td>
                 <td>{position.won}</td>

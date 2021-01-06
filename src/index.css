@@ -865,6 +865,11 @@ a.full-button {
   width: 100%;
 }
 
+.photo{
+  height: 50px;
+  width: 50px;
+}
+
 /**
  * Forms
  */
