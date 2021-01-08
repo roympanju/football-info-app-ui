@@ -37,7 +37,7 @@ class App extends Component{
                 <h1>Welcome To Football</h1>
                 <Tabs>
                     <div label="Competions">
-                        This is Home
+                        This is Home Tab
                     </div>
                     <div label="Standings" className="container">
                         <Table characterData={data} removeCharacter={this.removeCharacter} />
