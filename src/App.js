@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Table from './Table';
+import Table from './components/Table';
+import Tabs from './components/Tabs';
+import './App.css'
 
 class App extends Component{
     state = {
@@ -31,8 +33,16 @@ class App extends Component{
     render(){
         const {data} = this.state
         return (
-            <div className="container">
-                <Table characterData={data} removeCharacter={this.removeCharacter} />
+            <div>
+                <h1>Welcome To Football</h1>
+                <Tabs>
+                    <div label="Competions">
+                        This is Home
+                    </div>
+                    <div label="Standings" className="container">
+                        <Table characterData={data} removeCharacter={this.removeCharacter} />
+                    </div>
+                </Tabs>
             </div>
         )
     }
