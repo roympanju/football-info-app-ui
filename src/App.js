@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Table from './components/Table';
 import Tabs from './components/Tabs';
-import './App.css'
+//import './App.css'
 
 class App extends Component{
     state = {
@@ -36,7 +36,7 @@ class App extends Component{
             <div>
                 <h1>Welcome To Football</h1>
                 <Tabs>
-                    <div label="Competions">
+                    <div label="Home">
                         This is Home Tab
                     </div>
                     <div label="Standings" className="container">
