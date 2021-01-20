@@ -25,7 +25,7 @@ const TableBody = (props) => {
                 <td>
                     <React.Fragment>
                         {position.position}
-                        <img className="photo" src={position.team.crestUrl}/>
+                        <img className="photo" src={position.team.crestUrl} alt="club crest"/>
                         <button onClick={() => props.removeCharacter(index)}>{position.team.name}</button>
                     </React.Fragment>
                 </td>
