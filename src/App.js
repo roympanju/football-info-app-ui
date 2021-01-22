@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CompetitionTab from './components/CompetitionTab';
 import Table from './components/Table';
 import Tabs from './components/Tabs';
 //import './App.css'
@@ -6,7 +7,7 @@ import Tabs from './components/Tabs';
 class App extends Component{
     state = {
         standings: [],
-        competions: []
+        competitions: []
     }
     componentDidMount() {
          const url1 = "http://localhost:8090/football/leaguestanding/PL/standings"
@@ -33,10 +34,9 @@ class App extends Component{
         .then(([res1, res2]) => {
             this.setState({
                 standings: res1,
-                competions: res2
+                competitions: res2
             })
         });
-
 
     }
     removeCharacter = (index) => {
@@ -48,7 +48,7 @@ class App extends Component{
         })
     }
     render(){
-        const {standings} = this.state
+        const {standings, competitions} = this.state
         return (
             <div>
                 <h1>Welcome To Football</h1>
@@ -56,11 +56,13 @@ class App extends Component{
                     <div label="Home">
                         This is Home Tab
                     </div>
+                    <div label="Competitions">
+                        <span>
+                            <CompetitionTab characterData={competitions}/>
+                        </span>
+                    </div>
                     <div label="Standings" className="container">
                         <Table characterData={standings} removeCharacter={this.removeCharacter} />
-                    </div>
-                    <div label="competitions">
-                        Availble competitions
                     </div>
                 </Tabs>
             </div>
